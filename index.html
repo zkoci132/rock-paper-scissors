@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function main(person){
+            game(person)
+           // console.log(playGame(hello(person)))
+
+
+        }
+            
+
+        function hello(person){
+            if(person === undefined){
+                let person = convertToString(capitalize(prompt("Type in rock, paper, or scissors")))
+
+                return person
+            }
+            else{
+                return person
+            }
+        }
+
+        function convertToString(lst){
+            let wordList = ""
+            for(x in lst){
+                if(lst[x] != ','){
+                    wordList = wordList + lst[x]
+                }
+            }
+            return wordList
+        }
+
+        function capitalize(str){
+            let wordList = []
+            for(x in str){
+                if(str[x] === str[x].toUpperCase() && x != 0){
+                    let strToAppend = str[x].toLowerCase()
+                    wordList.push(strToAppend)
+                }
+                else if (str[x] === str[x].toLowerCase() && x == 0){
+                    let strToAppend = str[x].toUpperCase()
+                    wordList.push(strToAppend)
+                }
+                else{
+                    wordList.push(str[x])
+                }
+                
+            }
+            return wordList
+        }
+
+        function playGame(player){
+            let computer = getComputer()
+            if(player === "Rock"){
+                if(computer === "Paper"){
+                    return "You lose: paper beats rock"
+                }
+                else if(computer === "Rock"){
+                    return "Tie: both chose rock"
+                }
+                else{
+                    return "You win: rock beats scissors"
+                }
+            }
+            else if(player === "Paper"){
+                if(computer === "Paper"){
+                    return "Tie: both chose paper"
+                }
+                else if(computer === "Scissors"){
+                    return "You lose: Scissors beats paper"
+                }
+                else{
+                    return "You win: Paper beats rock"
+                }
+            }
+            else if(player === "Scissors"){
+                if(computer === "Scissors"){
+                    return "Tie: both chose scissors"
+                }
+                else if(computer === "Rock"){
+                    return "You lose: rock beats scissors"
+                }
+                else{
+                    return "You win: Scissors beats paper" 
+                }
+            }
+        }
+
+        function getComputer(){
+            options = ["Rock","Paper","Scissors"]
+            option = (Math.floor(Math.random() * (3-0) + 0))
+            return options[option]
+
+        }
+
+        function game(person){
+            let games = 0
+            wins = 0
+            losses = 0
+            ties = 0
+            while(games < 5){
+                let newPerson = hello(person)
+                //console.log(playGame(newPerson))
+                let gameString = playGame(newPerson)
+                console.log(gameString)
+                if(gameString[4] === "w"){
+                    console.log(gameString[4])
+                    wins = wins + 1
+                }
+                else if(gameString[4] === "l"){
+                    console.log(gameString[4])
+                    losses = losses + 1
+                }
+                else{
+                    ties = ties + 1
+                }
+
+                games = games + 1
+            }
+            if (ties > wins && ties > losses){
+                console.log("Tie Game")
+            }
+            else if (wins > losses){
+                console.log("You win")
+            }
+            else if(losses > wins){
+                console.log("You lose")
+            }
+            else{
+                console.log("Tie Game")
+            }
+        }
+    </script>
+    <div class = "buttons">
+        <button class="prompt" onclick="main()">Enter Prompt</button>
+        <button class="rock" onclick="main('Rock')">Rock</button>
+        <button class="scissors" onclick="main('Scissors')">Scissors</button>
+        <button class="paper" onclick="main('Paper')">Paper</button>
+    </div>
+    
+
+    
+    
+</body>
+</html>

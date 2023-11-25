@@ -1,0 +1,22 @@
+.rock{
+    height: 50px;
+    width: 80px;
+}
+
+.scissors{
+    height: 50px;
+    width: 80px;
+}
+
+.paper{
+    height: 50px;
+    width: 80px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 36px;
+}
