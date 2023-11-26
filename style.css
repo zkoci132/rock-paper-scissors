@@ -3,6 +3,10 @@
     width: 80px;
 }
 
+h1{
+    text-align: center;
+}
+
 .scissors{
     height: 50px;
     width: 80px;
@@ -19,4 +23,28 @@
     align-items: center;
     gap: 16px;
     margin-top: 36px;
+}
+
+.winsLossDisplay{
+    display: flex;
+    gap: 32px;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lossesDisplay,.winsDisplay{
+    text-align: center;
+}
+
+.gameDisplay{
+    border: 3px solid black;
+    width: 400px;
+    height: 40px;
+
 }
